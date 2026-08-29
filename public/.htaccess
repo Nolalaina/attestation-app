@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Ne pas réécrire les fichiers/dossiers existants (assets, images...)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Toutes les autres requêtes passent par index.php
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
