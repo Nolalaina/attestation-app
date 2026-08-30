@@ -8,10 +8,15 @@ class Demande extends Model
     {
         $year = date('Y');
         $stmt = $this->db->prepare(
-            "SELECT COUNT(*) FROM demandes WHERE YEAR(date_demande) = ?"
+            "SELECT code_demande FROM demandes WHERE code_demande LIKE ? ORDER BY id DESC LIMIT 1"
         );
-        $stmt->execute([$year]);
-        $count = (int) $stmt->fetchColumn() + 1;
+        $stmt->execute(["ATT-{$year}-%"]);
+        $lastCode = $stmt->fetchColumn();
+        if ($lastCode && preg_match('/ATT-\d+-(\d+)/', $lastCode, $m)) {
+            $count = ((int) $m[1]) + 1;
+        } else {
+            $count = 1;
+        }
         return sprintf('ATT-%s-%06d', $year, $count);
     }
 
@@ -120,8 +125,12 @@ class Demande extends Model
             $params['type_id'] = $filters['type_id'];
         }
         if (!empty($filters['q'])) {
-            $clauses[] = '(u.nom LIKE :q OR u.prenom LIKE :q OR u.matricule LIKE :q OR d.code_demande LIKE :q)';
-            $params['q'] = '%' . $filters['q'] . '%';
+            $clauses[] = '(u.nom LIKE :q1 OR u.prenom LIKE :q2 OR u.matricule LIKE :q3 OR d.code_demande LIKE :q4)';
+            $term = '%' . $filters['q'] . '%';
+            $params['q1'] = $term;
+            $params['q2'] = $term;
+            $params['q3'] = $term;
+            $params['q4'] = $term;
         }
         if (!empty($filters['date_debut'])) {
             $clauses[] = 'DATE(d.date_demande) >= :date_debut';

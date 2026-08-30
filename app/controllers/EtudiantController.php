@@ -43,15 +43,15 @@ class EtudiantController extends Controller
             $objet = $this->post('objet');
             $observations = $this->post('observations', '');
 
-            if (!$typeId) {
-                $errors[] = 'Veuillez choisir un type d\'attestation.';
+            $type = $typeId ? $this->typeModel->find($typeId) : null;
+            if (!$type) {
+                $errors[] = 'Veuillez choisir un type d\'attestation valide.';
             }
             if (empty($objet)) {
                 $errors[] = 'Veuillez préciser l\'objet de la demande.';
             }
 
             if (empty($errors)) {
-                $type = $this->typeModel->find($typeId);
                 $demandeId = $this->demandeModel->create(
                     Auth::id(),
                     $typeId,

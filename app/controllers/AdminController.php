@@ -8,8 +8,8 @@ class AdminController extends Controller
 
     public function __construct()
     {
-        $uri = $_SERVER['REQUEST_URI'] ?? '';
-        if (!str_contains($uri, 'ecranGuichet')) {
+        $path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
+        if (!str_ends_with($path, 'ecranGuichet')) {
             Auth::requireAdmin();
         }
         $this->demandeModel = $this->model('Demande');
