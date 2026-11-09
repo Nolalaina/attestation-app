@@ -3,175 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket Guichet N° <?= htmlspecialchars($demande['code_demande']) ?></title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@600;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Ticket de guichet à présenter lors du retrait de l'attestation.">
+    <title>Ticket guichet N° <?= htmlspecialchars($demande['code_demande']) ?></title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { overflow-x: clip; }
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #0f172a;
-            color: #f8fafc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            font-family: "General Sans", system-ui, -apple-system, sans-serif;
+            background: oklch(96.2% 0.008 252);
+            color: oklch(21% 0.028 262);
+            display: flex; justify-content: center; align-items: center;
+            min-height: 100dvh; padding: 20px;
         }
-        .no-print {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            z-index: 100;
-        }
+        :focus-visible { outline: 2px solid oklch(52% 0.19 258); outline-offset: 2px; }
+        .no-print { position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 100; }
         .btn {
-            background: linear-gradient(135deg, #6366f1, #06b6d4);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+            background: oklch(21% 0.024 262); color: oklch(93% 0.010 250);
+            padding: 10px 20px; border-radius: 8px; text-decoration: none;
+            font-weight: 500; font-size: 14px; border: none; cursor: pointer;
+            min-height: 44px; display: inline-flex; align-items: center;
         }
         .btn-ghost {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
+            background: transparent; color: oklch(21% 0.028 262);
+            border: 1px solid oklch(83% 0.012 252);
         }
         .ticket-card {
-            background: #1e293b;
-            border: 2px dashed #334155;
-            border-radius: 20px;
-            width: 100%;
-            max-width: 480px;
-            padding: 32px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            position: relative;
-            overflow: hidden;
+            background: oklch(99.4% 0.003 250);
+            border: 1px dashed oklch(83% 0.012 252);
+            border-radius: 8px; width: 100%; max-width: 480px;
+            padding: 32px; position: relative; overflow: hidden;
         }
-        .ticket-card::before, .ticket-card::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 24px;
-            height: 24px;
-            background: #0f172a;
-            border-radius: 50%;
-            transform: translateY(-50%);
-        }
-        .ticket-card::before { left: -12px; }
-        .ticket-card::after { right: -12px; }
-        
-        .header {
-            text-align: center;
-            border-bottom: 2px solid #334155;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-        .header h1 {
-            font-size: 22px;
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: -0.02em;
-        }
-        .header p {
-            font-size: 12px;
-            color: #06b6d4;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 700;
-            margin-top: 4px;
-        }
+        .header { text-align: center; border-bottom: 1px solid oklch(90% 0.009 252); padding-bottom: 20px; margin-bottom: 20px; }
+        .header h1 { font-size: 22px; font-weight: 600; }
+        .header p { font-size: 14px; color: oklch(50% 0.018 258); margin-top: 4px; }
         .ticket-code-box {
-            text-align: center;
-            background: rgba(6, 182, 212, 0.1);
-            border: 1px solid rgba(6, 182, 212, 0.3);
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 24px;
+            text-align: center; border: 1px solid oklch(90% 0.009 252);
+            border-radius: 8px; padding: 16px; margin-bottom: 24px; background: oklch(98.6% 0.005 250);
         }
-        .ticket-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #94a3b8;
-            font-weight: 700;
-        }
+        .ticket-label { font-size: 14px; color: oklch(50% 0.018 258); }
         .ticket-code {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 30px;
-            font-weight: 800;
-            color: #38bdf8;
-            letter-spacing: 0.05em;
-            margin-top: 4px;
+            font-family: "Geist Mono", ui-monospace, monospace;
+            font-size: 30px; font-variant-numeric: tabular-nums; margin-top: 4px;
         }
-        .barcode {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3px;
-            height: 36px;
-            margin-top: 10px;
-        }
-        .barcode div {
-            background: #f8fafc;
-            height: 100%;
-        }
-        .details-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-        .detail-item dt {
-            font-size: 11px;
-            text-transform: uppercase;
-            color: #64748b;
-            font-weight: 700;
-        }
-        .detail-item dd {
-            font-size: 14px;
-            font-weight: 700;
-            color: #fff;
-            margin-top: 2px;
-        }
+        .barcode { display: flex; justify-content: center; align-items: center; gap: 3px; height: 36px; margin-top: 10px; }
+        .barcode div { background: oklch(21% 0.028 262); height: 100%; }
+        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+        .detail-item dt { font-size: 14px; color: oklch(50% 0.018 258); }
+        .detail-item dd { font-size: 14px; font-weight: 600; margin-top: 2px; overflow-wrap: break-word; min-width: 0; }
         .footer-note {
-            text-align: center;
-            font-size: 12px;
-            color: #94a3b8;
-            border-top: 1px solid #334155;
-            padding-top: 16px;
+            text-align: center; font-size: 14px; color: oklch(50% 0.018 258);
+            border-top: 1px solid oklch(90% 0.009 252); padding-top: 16px;
         }
         @media print {
             .no-print { display: none; }
-            body { background: #fff; color: #000; padding: 0; }
-            .ticket-card { background: #fff; color: #000; border-color: #000; box-shadow: none; }
-            .ticket-code { color: #000; }
-            .barcode div { background: #000; }
-            .header h1, .detail-item dd { color: #000; }
-            .header p, .ticket-label, .detail-item dt, .footer-note { color: #444; }
+            body { background: oklch(99.4% 0.003 250); padding: 0; }
+            .ticket-card { background: oklch(99.4% 0.003 250); border-color: oklch(21% 0.028 262); }
         }
+        @media (prefers-reduced-motion: reduce) { * { transition: none; } }
     </style>
 </head>
 <body>
     <div class="no-print">
-        <button onclick="window.print()" class="btn">🖨️ Imprimer le ticket</button>
-        <button onclick="window.history.back()" class="btn btn-ghost">← Retour</button>
+        <button onclick="window.print()" class="btn" type="button">Imprimer le ticket</button>
+        <button onclick="window.history.back()" class="btn btn-ghost" type="button">Retour</button>
     </div>
 
     <div class="ticket-card">
         <div class="header">
             <h1><?= APP_NAME ?></h1>
-            <p>Ticket de Guichet & Reçu de Demande</p>
+            <p>Ticket de guichet et reçu de demande</p>
         </div>
 
         <div class="ticket-code-box">
-            <div class="ticket-label">N° DE TICKET DE FILE D'ATTENTE</div>
+            <div class="ticket-label">N° de ticket de file d'attente</div>
             <div class="ticket-code"><?= htmlspecialchars($demande['code_demande']) ?></div>
-            <div class="barcode">
+            <div class="barcode" aria-hidden="true">
                 <div style="width:3px"></div><div style="width:1px"></div><div style="width:4px"></div>
                 <div style="width:2px"></div><div style="width:5px"></div><div style="width:1px"></div>
                 <div style="width:3px"></div><div style="width:2px"></div><div style="width:4px"></div>
@@ -194,8 +103,8 @@
                 <dd><?= htmlspecialchars($demande['type_nom']) ?></dd>
             </div>
             <div class="detail-item">
-                <dt>Statut Actuel</dt>
-                <dd><?= strtoupper(str_replace('_', ' ', $demande['statut'])) ?></dd>
+                <dt>Statut actuel</dt>
+                <dd><?= ucfirst(str_replace('_', ' ', $demande['statut'])) ?></dd>
             </div>
             <div class="detail-item">
                 <dt>Date de soumission</dt>
@@ -209,7 +118,7 @@
 
         <div class="footer-note">
             Présentez ce ticket au guichet administratif lors du retrait de votre document.<br>
-            <strong>Merci de vous munir d'une pièce d'identité valide.</strong>
+            <strong>Munissez-vous d'une pièce d'identité valide.</strong>
         </div>
     </div>
 </body>

@@ -1,0 +1,19 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "app",
+  "shape": "app-screen",
+  "theme": "Coral",
+  "axes": "light/grotesk-sans/warm",
+  "hero": "none-app-screen",
+  "nav": "sidebar-shell-kept",
+  "footer": "none",
+  "imagery": "none-built",
+  "photos": [],
+  "signature": "ticket-code-stock",
+  "waived": [],
+  "prompt": "correction vibecoding AttestPro attestations",
+  "date": "2026-11-09"
+ }
+]

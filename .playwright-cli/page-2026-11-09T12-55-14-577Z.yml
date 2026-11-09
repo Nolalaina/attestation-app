@@ -1,0 +1,245 @@
+- generic [active] [ref=f9e1]:
+  - link "Aller au contenu" [ref=f9e2] [cursor=pointer]:
+    - /url: "#contenu"
+  - generic [ref=f9e3]:
+    - complementary [ref=f9e4]:
+      - generic [ref=f9e5]:
+        - generic [ref=f9e6]: 
+        - generic [ref=f9e8]:
+          - generic [ref=f9e9]: AttestPro
+          - generic [ref=f9e10]: File d'attente et attestations
+      - navigation "Administration" [ref=f9e11]:
+        - generic [ref=f9e12]: Pilotage et guichet
+        - link " Tableau de bord" [ref=f9e13] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/dashboard
+          - generic [ref=f9e14]: 
+          - generic [ref=f9e15]: Tableau de bord
+        - link " Registre des demandes" [ref=f9e16] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/registre
+          - generic [ref=f9e17]: 
+          - generic [ref=f9e18]: Registre des demandes
+        - link " Statistiques" [ref=f9e19] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/statistiques
+          - generic [ref=f9e20]: 
+          - generic [ref=f9e21]: Statistiques
+        - link " Écran guichet" [ref=f9e22] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/ecranGuichet
+          - generic [ref=f9e23]: 
+          - generic [ref=f9e24]: Écran guichet
+        - generic [ref=f9e25]: Catalogue
+        - link " Types d'attestation" [ref=f9e26] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/typesAttestation
+          - generic [ref=f9e27]: 
+          - generic [ref=f9e28]: Types d'attestation
+      - generic [ref=f9e29]:
+        - generic [ref=f9e30]:
+          - generic [ref=f9e31]: F
+          - generic [ref=f9e32]:
+            - generic [ref=f9e33]: Fara Andria
+            - generic [ref=f9e34]: Agent administratif
+        - link "Se déconnecter" [ref=f9e35] [cursor=pointer]:
+          - /url: http://localhost:8000/auth/logout
+          - generic [ref=f9e36]: 
+    - main [ref=f9e37]:
+      - generic [ref=f9e38]:
+        - generic [ref=f9e39]:
+          - heading "Espace administratif" [level=1] [ref=f9e40]
+          - paragraph [ref=f9e41]: Suivi en temps réel des demandes d'attestations
+        - generic [ref=f9e42]:
+          - generic [ref=f9e43]: Guichet en ligne
+          - generic [ref=f9e44]: 15:55:14
+      - generic [ref=f9e45]:
+        - generic [ref=f9e46]:
+          - paragraph [ref=f9e47]: Registre général
+          - heading "Registre des demandes et tickets" [level=1] [ref=f9e48]
+          - paragraph [ref=f9e49]: 12 demande(s) correspondant à vos critères de recherche.
+        - link "Écran guichet" [ref=f9e50] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/ecranGuichet
+      - generic [ref=f9e51]:
+        - generic [ref=f9e52]:
+          - generic [ref=f9e53]: Recherche rapide
+          - textbox "Recherche rapide" [ref=f9e54]:
+            - /placeholder: Nom, matricule, N° ticket
+        - generic [ref=f9e55]:
+          - generic [ref=f9e56]: Statut
+          - combobox "Statut" [ref=f9e57]:
+            - option "Tous les statuts" [selected]
+            - option "En attente"
+            - option "En cours"
+            - option "Traitée"
+            - option "Refusée"
+            - option "Retirée"
+        - generic [ref=f9e58]:
+          - generic [ref=f9e59]: Type d'attestation
+          - combobox "Type d'attestation" [ref=f9e60]:
+            - option "Tous les types" [selected]
+            - option "Attestation d'inscription"
+            - option "Attestation de présence"
+            - option "Attestation de réussite"
+            - option "Certificat de scolarité"
+            - option "Duplicata de Diplôme"
+            - option "Relevé de notes"
+        - generic [ref=f9e61]:
+          - generic [ref=f9e62]: Du
+          - textbox "Du" [ref=f9e63]
+        - generic [ref=f9e64]:
+          - generic [ref=f9e65]: Au
+          - textbox "Au" [ref=f9e66]
+        - button "Filtrer" [ref=f9e67] [cursor=pointer]
+        - link "Réinitialiser" [ref=f9e68] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/registre
+      - table [ref=f9e70]:
+        - rowgroup [ref=f9e71]:
+          - row [ref=f9e72]:
+            - columnheader "N° ticket" [ref=f9e73]
+            - columnheader "Étudiant" [ref=f9e74]
+            - columnheader "Matricule" [ref=f9e75]
+            - columnheader "Type" [ref=f9e76]
+            - columnheader "Date de dépôt" [ref=f9e77]
+            - columnheader "Statut" [ref=f9e78]
+            - columnheader "Actions" [ref=f9e79]
+        - rowgroup [ref=f9e80]:
+          - row [ref=f9e81]:
+            - cell "ATT-2026-000012" [ref=f9e82]
+            - cell [ref=f9e83]:
+              - strong [ref=f9e84]: Hery Ravelo
+            - cell "MAT-76109" [ref=f9e85]
+            - cell "Certificat de scolarité" [ref=f9e86]
+            - cell "30/08/2026" [ref=f9e87]
+            - cell "Retiree" [ref=f9e88]
+            - cell [ref=f9e90]:
+              - generic [ref=f9e91]:
+                - link "Ouvrir" [ref=f9e92] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/detail/12
+                - link "" [ref=f9e93] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/ticket/12
+          - row [ref=f9e95]:
+            - cell "ATT-2026-000011" [ref=f9e96]
+            - cell [ref=f9e97]:
+              - strong [ref=f9e98]: Hery Ravelo
+            - cell "MAT-36813" [ref=f9e99]
+            - cell "Certificat de scolarité" [ref=f9e100]
+            - cell "30/08/2026" [ref=f9e101]
+            - cell "Retiree" [ref=f9e102]
+            - cell [ref=f9e104]:
+              - generic [ref=f9e105]:
+                - link "Ouvrir" [ref=f9e106] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/detail/11
+                - link "" [ref=f9e107] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/ticket/11
+          - row [ref=f9e109]:
+            - cell "ATT-2026-000010" [ref=f9e110]
+            - cell [ref=f9e111]:
+              - strong [ref=f9e112]: Hery Ravelo
+            - cell "MAT-51225" [ref=f9e113]
+            - cell "Certificat de scolarité" [ref=f9e114]
+            - cell "30/08/2026" [ref=f9e115]
+            - cell "Retiree" [ref=f9e116]
+            - cell [ref=f9e118]:
+              - generic [ref=f9e119]:
+                - link "Ouvrir" [ref=f9e120] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/detail/10
+                - link "" [ref=f9e121] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/ticket/10
+          - row [ref=f9e123]:
+            - cell "ATT-2026-0005" [ref=f9e124]
+            - cell [ref=f9e125]:
+              - strong [ref=f9e126]: Soafara Haja
+            - cell "2025-ECO-0512" [ref=f9e127]
+            - cell "Attestation de réussite" [ref=f9e128]
+            - cell "29/08/2026" [ref=f9e129]
+            - cell "En attente" [ref=f9e130]
+            - cell [ref=f9e132]:
+              - generic [ref=f9e133]:
+                - link "Ouvrir" [ref=f9e134] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/detail/5
+                - link "" [ref=f9e135] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/ticket/5
+          - row [ref=f9e137]:
+            - cell "ATT-2026-0004" [ref=f9e138]
+            - cell [ref=f9e139]:
+              - strong [ref=f9e140]: Toky Randria
+            - cell "2024-DRO-0033" [ref=f9e141]
+            - cell "Certificat de scolarité" [ref=f9e142]
+            - cell "28/08/2026" [ref=f9e143]
+            - cell "En attente" [ref=f9e144]
+            - cell [ref=f9e146]:
+              - generic [ref=f9e147]:
+                - link "Ouvrir" [ref=f9e148] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/detail/4
+                - link "" [ref=f9e149] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/ticket/4
+          - row [ref=f9e151]:
+            - cell "ATT-2026-0008" [ref=f9e152]
+            - cell [ref=f9e153]:
+              - strong [ref=f9e154]: Mira Rasoa
+            - cell "2022-GES-0891" [ref=f9e155]
+            - cell "Certificat de scolarité" [ref=f9e156]
+            - cell "28/08/2026" [ref=f9e157]
+            - cell "En cours" [ref=f9e158]
+            - cell [ref=f9e160]:
+              - generic [ref=f9e161]:
+                - link "Ouvrir" [ref=f9e162] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/detail/8
+                - link "" [ref=f9e163] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/ticket/8
+          - row [ref=f9e165]:
+            - cell "ATT-2026-0003" [ref=f9e166]
+            - cell [ref=f9e167]:
+              - strong [ref=f9e168]: Mira Rasoa
+            - cell "2022-GES-0891" [ref=f9e169]
+            - cell "Attestation d'inscription" [ref=f9e170]
+            - cell "27/08/2026" [ref=f9e171]
+            - cell "En cours" [ref=f9e172]
+            - cell [ref=f9e174]:
+              - generic [ref=f9e175]:
+                - link "Ouvrir" [ref=f9e176] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/detail/3
+                - link "" [ref=f9e177] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/ticket/3
+          - row [ref=f9e179]:
+            - cell "ATT-2026-0009" [ref=f9e180]
+            - cell [ref=f9e181]:
+              - strong [ref=f9e182]: Toky Randria
+            - cell "2024-DRO-0033" [ref=f9e183]
+            - cell "Attestation de présence" [ref=f9e184]
+            - cell "25/08/2026" [ref=f9e185]
+            - cell "Traitee" [ref=f9e186]
+            - cell [ref=f9e188]:
+              - generic [ref=f9e189]:
+                - link "Ouvrir" [ref=f9e190] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/detail/9
+                - link "" [ref=f9e191] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/ticket/9
+          - row [ref=f9e193]:
+            - cell "ATT-2026-0002" [ref=f9e194]
+            - cell [ref=f9e195]:
+              - strong [ref=f9e196]: Haja Rakoto
+            - cell "2023-INF-0142" [ref=f9e197]
+            - cell "Relevé de notes" [ref=f9e198]
+            - cell "20/08/2026" [ref=f9e199]
+            - cell "Traitee" [ref=f9e200]
+            - cell [ref=f9e202]:
+              - generic [ref=f9e203]:
+                - link "Ouvrir" [ref=f9e204] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/detail/2
+                - link "" [ref=f9e205] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/ticket/2
+          - row [ref=f9e207]:
+            - cell "ATT-2026-0006" [ref=f9e208]
+            - cell [ref=f9e209]:
+              - strong [ref=f9e210]: Kevin Ravelo
+            - cell "2023-INF-0205" [ref=f9e211]
+            - cell "Relevé de notes" [ref=f9e212]
+            - cell "18/08/2026" [ref=f9e213]
+            - cell "Refusee" [ref=f9e214]
+            - cell [ref=f9e216]:
+              - generic [ref=f9e217]:
+                - link "Ouvrir" [ref=f9e218] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/detail/6
+                - link "" [ref=f9e219] [cursor=pointer]:
+                  - /url: http://localhost:8000/admin/ticket/6
+      - generic [ref=f9e221]:
+        - generic [ref=f9e222]: "1"
+        - link "2" [ref=f9e223] [cursor=pointer]:
+          - /url: "?statut=&type_id=&q=&date_debut=&date_fin=&page=2"

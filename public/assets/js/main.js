@@ -1,18 +1,15 @@
-// System JavaScript — AttestPro Queue & Certificate Portal
-
+// System JavaScript — AttestPro queue & certificate portal
 document.addEventListener('DOMContentLoaded', function () {
-    // 1. Fermeture automatique des messages flash
     var flash = document.querySelector('.flash');
     if (flash) {
         setTimeout(function () {
-            flash.style.transition = 'all .4s cubic-bezier(0.4, 0, 0.2, 1)';
+            flash.style.transition = 'opacity .4s ease, transform .4s ease';
             flash.style.opacity = '0';
             flash.style.transform = 'translateY(-8px)';
             setTimeout(function () { flash.remove(); }, 400);
         }, 4500);
     }
 
-    // 2. Horloge en direct
     function updateClock() {
         var clockEl = document.getElementById('live-clock');
         if (clockEl) {
@@ -26,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
     updateClock();
     setInterval(updateClock, 1000);
 
-    // 3. Confirmation d'actions sensibles
     document.querySelectorAll('[data-confirm]').forEach(function (el) {
         el.addEventListener('click', function (e) {
             if (!confirm(el.getAttribute('data-confirm'))) {
@@ -35,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // 4. Formulaire de statut : bascule du champ motif si "refusee"
     document.querySelectorAll('[data-statut-select]').forEach(function (select) {
         var motifBox = document.querySelector(select.getAttribute('data-statut-select'));
         if (!motifBox) return;

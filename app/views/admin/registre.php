@@ -1,16 +1,16 @@
 <div class="page-head">
     <div>
-        <p class="page-eyebrow">Registre Général</p>
-        <h1>Registre des demandes & tickets</h1>
+        <p class="page-eyebrow">Registre général</p>
+        <h1>Registre des demandes et tickets</h1>
         <p class="page-sub"><?= $totalResultats ?> demande(s) correspondant à vos critères de recherche.</p>
     </div>
-    <a href="<?= APP_URL ?>/admin/ecranGuichet" target="_blank" class="btn btn-accent"><i class="bi bi-tv-fill"></i> Écran Guichet (Hall)</a>
+    <a href="<?= APP_URL ?>/admin/ecranGuichet" target="_blank" rel="noopener" class="btn btn-accent">Écran guichet</a>
 </div>
 
 <form method="GET" action="<?= APP_URL ?>/admin/registre" class="filter-bar">
     <div class="form-group">
         <label for="q">Recherche rapide</label>
-        <input type="text" id="q" name="q" placeholder="Nom, matricule, N° ticket..." value="<?= htmlspecialchars($filters['q']) ?>">
+        <input type="text" id="q" name="q" placeholder="Nom, matricule, N° ticket" value="<?= htmlspecialchars($filters['q']) ?>">
     </div>
     <div class="form-group">
         <label for="statut">Statut</label>
@@ -38,7 +38,7 @@
         <label for="date_fin">Au</label>
         <input type="date" id="date_fin" name="date_fin" value="<?= htmlspecialchars($filters['date_fin']) ?>">
     </div>
-    <button type="submit" class="btn btn-primary"><i class="bi bi-funnel-fill"></i> Filtrer</button>
+    <button type="submit" class="btn btn-primary">Filtrer</button>
     <a href="<?= APP_URL ?>/admin/registre" class="btn btn-ghost">Réinitialiser</a>
 </form>
 
@@ -48,7 +48,7 @@
     <div class="table-wrap">
         <table>
             <thead>
-                <tr><th>N° Ticket</th><th>Étudiant</th><th>Matricule</th><th>Type</th><th>Date Dépôt</th><th>Statut</th><th>Actions</th></tr>
+                <tr><th>N° ticket</th><th>Étudiant</th><th>Matricule</th><th>Type</th><th>Date de dépôt</th><th>Statut</th><th>Actions</th></tr>
             </thead>
             <tbody>
                 <?php foreach ($demandes as $d): ?>
@@ -60,9 +60,9 @@
                     <td><?= date('d/m/Y', strtotime($d['date_demande'])) ?></td>
                     <td><span class="badge badge-<?= $d['statut'] ?>"><?= ucfirst(str_replace('_', ' ', $d['statut'])) ?></span></td>
                     <td>
-                        <div style="display:flex;gap:6px;">
+                        <div class="col-actions">
                             <a href="<?= APP_URL ?>/admin/detail/<?= $d['id'] ?>" class="btn btn-ghost btn-sm">Ouvrir</a>
-                            <a href="<?= APP_URL ?>/admin/ticket/<?= $d['id'] ?>" target="_blank" class="btn btn-ghost btn-sm" title="Imprimer Ticket"><i class="bi bi-printer"></i></a>
+                            <a href="<?= APP_URL ?>/admin/ticket/<?= $d['id'] ?>" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" title="Imprimer le ticket"><i class="bi bi-printer"></i></a>
                         </div>
                     </td>
                 </tr>

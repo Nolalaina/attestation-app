@@ -1,10 +1,10 @@
 <div class="page-head">
     <div>
-        <p class="page-eyebrow">Historique des Tickets</p>
+        <p class="page-eyebrow">Historique des tickets</p>
         <h1>Mes demandes d'attestation</h1>
-        <p class="page-sub">Suivez l'avancement de vos dossiers en temps réel et imprimez vos reçus de guichet.</p>
+        <p class="page-sub">Suivez l'avancement de vos dossiers et imprimez vos reçus de guichet.</p>
     </div>
-    <a href="<?= APP_URL ?>/etudiant/nouvelleDemande" class="btn btn-accent"><i class="bi bi-plus-lg"></i> Nouvelle demande</a>
+    <a href="<?= APP_URL ?>/etudiant/nouvelleDemande" class="btn btn-accent">Nouvelle demande</a>
 </div>
 
 <?php if (empty($demandes)): ?>
@@ -18,11 +18,11 @@
         <table>
             <thead>
                 <tr>
-                    <th>N° Ticket</th>
-                    <th>Type d'Attestation</th>
+                    <th>N° ticket</th>
+                    <th>Type d'attestation</th>
                     <th>Objet</th>
-                    <th>Date Dépôt</th>
-                    <th>Retrait Prévu</th>
+                    <th>Date de dépôt</th>
+                    <th>Retrait prévu</th>
                     <th>Statut</th>
                     <th>Actions</th>
                 </tr>
@@ -37,11 +37,11 @@
                     <td><?= $d['date_prevue_retrait'] ? date('d/m/Y', strtotime($d['date_prevue_retrait'])) : '—' ?></td>
                     <td><span class="badge badge-<?= $d['statut'] ?>"><?= ucfirst(str_replace('_', ' ', $d['statut'])) ?></span></td>
                     <td>
-                        <div style="display:flex;gap:6px;">
-                            <a href="<?= APP_URL ?>/etudiant/detail/<?= $d['id'] ?>" class="btn btn-ghost btn-sm" title="Voir les détails"><i class="bi bi-eye"></i> Détails</a>
-                            <a href="<?= APP_URL ?>/etudiant/ticket/<?= $d['id'] ?>" target="_blank" class="btn btn-ghost btn-sm" title="Imprimer le reçu de ticket"><i class="bi bi-printer"></i> Ticket</a>
+                        <div class="col-actions">
+                            <a href="<?= APP_URL ?>/etudiant/detail/<?= $d['id'] ?>" class="btn btn-ghost btn-sm" title="Voir les détails">Détails</a>
+                            <a href="<?= APP_URL ?>/etudiant/ticket/<?= $d['id'] ?>" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" title="Imprimer le reçu de ticket">Ticket</a>
                             <?php if ($d['statut'] === 'en_attente'): ?>
-                            <a href="<?= APP_URL ?>/etudiant/annuler/<?= $d['id'] ?>" class="btn btn-danger btn-sm" data-confirm="Annuler définitivement cette demande de ticket ?"><i class="bi bi-trash"></i></a>
+                            <a href="<?= APP_URL ?>/etudiant/annuler/<?= $d['id'] ?>" class="btn btn-danger btn-sm" data-confirm="Annuler définitivement cette demande ?">Annuler</a>
                             <?php endif; ?>
                         </div>
                     </td>

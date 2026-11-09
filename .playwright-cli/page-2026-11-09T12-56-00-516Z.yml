@@ -1,0 +1,142 @@
+- generic [active] [ref=f10e1]:
+  - link "Aller au contenu" [ref=f10e2] [cursor=pointer]:
+    - /url: "#contenu"
+  - generic [ref=f10e3]:
+    - complementary [ref=f10e4]:
+      - generic [ref=f10e5]:
+        - generic [ref=f10e6]: 
+        - generic [ref=f10e8]:
+          - generic [ref=f10e9]: AttestPro
+          - generic [ref=f10e10]: File d'attente et attestations
+      - navigation "Administration" [ref=f10e11]:
+        - generic [ref=f10e12]: Pilotage et guichet
+        - link " Tableau de bord" [ref=f10e13] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/dashboard
+          - generic [ref=f10e14]: 
+          - generic [ref=f10e15]: Tableau de bord
+        - link " Registre des demandes" [ref=f10e16] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/registre
+          - generic [ref=f10e17]: 
+          - generic [ref=f10e18]: Registre des demandes
+        - link " Statistiques" [ref=f10e19] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/statistiques
+          - generic [ref=f10e20]: 
+          - generic [ref=f10e21]: Statistiques
+        - link " Écran guichet" [ref=f10e22] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/ecranGuichet
+          - generic [ref=f10e23]: 
+          - generic [ref=f10e24]: Écran guichet
+        - generic [ref=f10e25]: Catalogue
+        - link " Types d'attestation" [ref=f10e26] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/typesAttestation
+          - generic [ref=f10e27]: 
+          - generic [ref=f10e28]: Types d'attestation
+      - generic [ref=f10e29]:
+        - generic [ref=f10e30]:
+          - generic [ref=f10e31]: F
+          - generic [ref=f10e32]:
+            - generic [ref=f10e33]: Fara Andria
+            - generic [ref=f10e34]: Agent administratif
+        - link "Se déconnecter" [ref=f10e35] [cursor=pointer]:
+          - /url: http://localhost:8000/auth/logout
+          - generic [ref=f10e36]: 
+    - main [ref=f10e37]:
+      - generic [ref=f10e38]:
+        - generic [ref=f10e39]:
+          - heading "Espace administratif" [level=1] [ref=f10e40]
+          - paragraph [ref=f10e41]: Suivi en temps réel des demandes d'attestations
+        - generic [ref=f10e42]:
+          - generic [ref=f10e43]: Guichet en ligne
+          - generic [ref=f10e44]: 15:56:00
+      - generic [ref=f10e45]:
+        - generic [ref=f10e46]:
+          - paragraph [ref=f10e47]: Analyse et performance
+          - heading "Statistiques de la file d'attente" [level=1] [ref=f10e48]
+          - paragraph [ref=f10e49]: Volume d'activité hebdomadaire et répartition des demandes par type et statut.
+        - link "Écran guichet" [ref=f10e50] [cursor=pointer]:
+          - /url: http://localhost:8000/admin/ecranGuichet
+      - heading "Activité hebdomadaire du bureau" [level=2] [ref=f10e52]
+      - table [ref=f10e54]:
+        - rowgroup [ref=f10e55]:
+          - row [ref=f10e56]:
+            - columnheader "Semaine du" [ref=f10e57]
+            - columnheader "Total des soumissions" [ref=f10e58]
+            - columnheader "Traitées et prêtes" [ref=f10e59]
+            - columnheader "En cours de traitement" [ref=f10e60]
+            - columnheader "Refusées" [ref=f10e61]
+        - rowgroup [ref=f10e62]:
+          - row [ref=f10e63]:
+            - cell [ref=f10e64]:
+              - strong [ref=f10e65]: 10/08/2026
+            - cell [ref=f10e66]:
+              - strong [ref=f10e67]: "2"
+            - cell "2" [ref=f10e68]
+            - cell "0" [ref=f10e70]
+            - cell "0" [ref=f10e72]
+          - row [ref=f10e74]:
+            - cell [ref=f10e75]:
+              - strong [ref=f10e76]: 18/08/2026
+            - cell [ref=f10e77]:
+              - strong [ref=f10e78]: "2"
+            - cell "1" [ref=f10e79]
+            - cell "0" [ref=f10e81]
+            - cell "1" [ref=f10e83]
+          - row [ref=f10e85]:
+            - cell [ref=f10e86]:
+              - strong [ref=f10e87]: 25/08/2026
+            - cell [ref=f10e88]:
+              - strong [ref=f10e89]: "8"
+            - cell "4" [ref=f10e90]
+            - cell "4" [ref=f10e92]
+            - cell "0" [ref=f10e94]
+      - generic [ref=f10e96]:
+        - generic [ref=f10e97]:
+          - heading "Demandes par type d'attestation" [level=2] [ref=f10e99]
+          - table [ref=f10e101]:
+            - rowgroup [ref=f10e102]:
+              - row [ref=f10e103]:
+                - columnheader "Type d'attestation" [ref=f10e104]
+                - columnheader "Nombre total" [ref=f10e105]
+            - rowgroup [ref=f10e106]:
+              - row [ref=f10e107]:
+                - cell [ref=f10e108]:
+                  - strong [ref=f10e109]: Certificat de scolarité
+                - cell "6" [ref=f10e110]
+              - row [ref=f10e111]:
+                - cell [ref=f10e112]:
+                  - strong [ref=f10e113]: Attestation d'inscription
+                - cell "2" [ref=f10e114]
+              - row [ref=f10e115]:
+                - cell [ref=f10e116]:
+                  - strong [ref=f10e117]: Relevé de notes
+                - cell "2" [ref=f10e118]
+              - row [ref=f10e119]:
+                - cell [ref=f10e120]:
+                  - strong [ref=f10e121]: Attestation de réussite
+                - cell "1" [ref=f10e122]
+              - row [ref=f10e123]:
+                - cell [ref=f10e124]:
+                  - strong [ref=f10e125]: Attestation de présence
+                - cell "1" [ref=f10e126]
+              - row [ref=f10e127]:
+                - cell [ref=f10e128]:
+                  - strong [ref=f10e129]: Duplicata de Diplôme
+                - cell "0" [ref=f10e130]
+        - generic [ref=f10e131]:
+          - heading "Répartition globale par statut" [level=2] [ref=f10e133]
+          - generic [ref=f10e134]:
+            - generic [ref=f10e136]:
+              - generic [ref=f10e137]: En attente
+              - strong [ref=f10e138]: 2 ticket(s) (17%)
+            - generic [ref=f10e142]:
+              - generic [ref=f10e143]: En cours
+              - strong [ref=f10e144]: 2 ticket(s) (17%)
+            - generic [ref=f10e148]:
+              - generic [ref=f10e149]: Traitée
+              - strong [ref=f10e150]: 2 ticket(s) (17%)
+            - generic [ref=f10e154]:
+              - generic [ref=f10e155]: Refusée
+              - strong [ref=f10e156]: 1 ticket(s) (8%)
+            - generic [ref=f10e160]:
+              - generic [ref=f10e161]: Retirée
+              - strong [ref=f10e162]: 5 ticket(s) (42%)

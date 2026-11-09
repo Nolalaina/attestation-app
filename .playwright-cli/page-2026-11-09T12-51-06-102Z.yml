@@ -1,0 +1,38 @@
+- generic [ref=f5e2]:
+  - generic [ref=f5e3]:
+    - generic [ref=f5e4]:
+      - generic [ref=f5e5]: 
+      - generic [ref=f5e7]:
+        - text: AttestPro
+        - generic [ref=f5e8]: Système de file d'attente
+    - generic [ref=f5e9]:
+      - heading "Le guichet de vos attestations académiques." [level=2] [ref=f5e10]
+      - paragraph [ref=f5e11]: Soumettez votre demande en quelques minutes, obtenez votre ticket et suivez chaque étape jusqu'au retrait.
+      - generic [ref=f5e12]:
+        - generic [ref=f5e13]:
+          - generic [ref=f5e14]: 
+          - generic [ref=f5e15]: Suivi du statut de votre ticket en temps réel
+        - generic [ref=f5e16]:
+          - generic [ref=f5e17]: 
+          - generic [ref=f5e18]: Reçu de guichet avec code unique
+        - generic [ref=f5e19]:
+          - generic [ref=f5e20]: 
+          - generic [ref=f5e21]: Affichage d'appel en direct sur l'écran du hall
+    - paragraph [ref=f5e22]: Fini les heures d'attente devant le bureau de la scolarité.
+  - generic [ref=f5e24]:
+    - heading "Connexion" [level=1] [ref=f5e25]
+    - paragraph [ref=f5e26]: Accédez à votre espace étudiant ou administratif.
+    - generic [ref=f5e27]:
+      - generic [ref=f5e28]:
+        - generic [ref=f5e29]: Adresse email
+        - textbox "Adresse email" [active] [ref=f5e30]:
+          - /placeholder: prenom.nom@universite.mg
+      - generic [ref=f5e31]:
+        - generic [ref=f5e32]: Mot de passe
+        - textbox "Mot de passe" [ref=f5e33]:
+          - /placeholder: ••••••••
+      - button "Se connecter" [ref=f5e34] [cursor=pointer]
+    - paragraph [ref=f5e36]:
+      - text: Pas encore de compte ?
+      - link "Créer un compte étudiant" [ref=f5e37] [cursor=pointer]:
+        - /url: http://localhost:8000/auth/register
